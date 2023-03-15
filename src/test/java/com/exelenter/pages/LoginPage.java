@@ -1,6 +1,7 @@
 package com.exelenter.pages;
 
 import com.exelenter.base.BaseClass;
+import com.exelenter.utils.ConfigsReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -32,10 +33,14 @@ public class LoginPage extends BaseClass {
     }
 
     public void loginToWebsite(String user, String pswd) {
-//        sendText(username, ConfigsReader.getProperties(user));
-//        sendText(password, ConfigsReader.getProperties(pswd));
         sendText(username, user);
         sendText(password, pswd);
+        clickButWaitForClickability(loginBtn);
+    }
+
+    public void loginToWebsiteViaConfigs(String user, String pswd) {
+        sendText(username, ConfigsReader.getProperties(user));
+        sendText(password, ConfigsReader.getProperties(pswd));
         clickButWaitForClickability(loginBtn);
     }
 
