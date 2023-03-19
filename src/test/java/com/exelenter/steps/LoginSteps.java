@@ -17,7 +17,6 @@ public class LoginSteps extends BaseClass {
         String expectedWelcomeMsg = "Welcome Admin";
         String actualWelcomeMsg = dashboardPage.welcome.getText();
         Assert.assertEquals("Admin login NOT successful",expectedWelcomeMsg, actualWelcomeMsg);
-        tearDown();
     }
 
     @When("user pass the valid username and invalid password")
@@ -35,14 +34,12 @@ public class LoginSteps extends BaseClass {
         String expectedLoginErrorMsg = "Invalid credentials";
         String actualLoginErrorMsg = loginPage.loginErrorMessage.getText();
         Assert.assertEquals("Login Error Message is Incorrect",expectedLoginErrorMsg, actualLoginErrorMsg);
-        tearDown();
     }
 
     @Then("login error message for empty password is displayed")
     public void login_Error_Message_For_Empty_Password_Is_Displayed() {
         Assert.assertEquals("Login Error Message is Incorrect", "Password cannot be empty", loginPage.loginErrorMessage.getText());
         //Assert.fail(); // Failing this for rerun failed.txt, please fix after you are done testing.
-        tearDown();
     }
 
 
