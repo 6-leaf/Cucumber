@@ -20,4 +20,11 @@ public class EmployeeListPage extends BaseClass {
     }
 
 
+    public void searchEmployeeById(String empId){
+        sendText(employeeIdSearchField, empId);
+    }
+
+    public void searchEmployeeByName(String empName){
+        sendText(employeeNameSearchField, empName);
+    }
 }

@@ -24,9 +24,5 @@ public class PIMPage extends BaseClass {
 
     public void navigateToEmployeeListPage() {
         click(PIM);
-        click(employeeList);
     }
-
-
-
 }
